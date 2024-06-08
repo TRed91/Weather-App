@@ -13,5 +13,22 @@ export default function processData(data) {
 
     const condition = data.current.condition.text;
 
-    return {country, city, region, tempC, tempF, feelslikeC, feelslikeF, humidity, condition};
+    const forecastDay1 = data.forecast.forecastday[1];
+    const forecastDay2 = data.forecast.forecastday[2];
+    const forecastDay3 = data.forecast.forecastday[3];
+
+    return {
+            country, 
+            city, 
+            region, 
+            tempC, 
+            tempF, 
+            feelslikeC, 
+            feelslikeF, 
+            humidity, 
+            condition, 
+            forecastDay1, 
+            forecastDay2, 
+            forecastDay3
+        };
 }
