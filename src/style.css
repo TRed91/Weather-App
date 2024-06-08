@@ -1,3 +1,26 @@
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: aliceblue;
+    gap: 30px;
+}
+
+.location-info, .temp-info, .condition, .humidity {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }

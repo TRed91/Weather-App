@@ -1,5 +1,6 @@
 import './style.css';
 import processData from './processData';
+import displayData from './displayData';
 
 async function getWeatherInfo(location) {
 
@@ -22,8 +23,5 @@ searchBtn.addEventListener('click', async () => {
     const weather = getWeatherInfo(search.value);
     const getData = weather.then(data => processData(data));
     const dataObj = await getData;
-    console.log(dataObj);
+    displayData(dataObj);
 });
-
-
-
