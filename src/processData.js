@@ -1,4 +1,5 @@
 export default function processData(data) {
+    console.log(data);
     const country = data.location.country;
     const city = data.location.name;
     const region = data.location.region;

@@ -1,6 +1,6 @@
-export default function displayData(data) {
+export default function displayData(data, forecast) {
     const infoContainer = document.querySelector('.weather-info');
-
+    
     // Empty Display on new search
     while (infoContainer.firstChild){
         infoContainer.removeChild(infoContainer.firstChild);

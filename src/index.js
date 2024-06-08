@@ -1,11 +1,12 @@
 import './style.css';
 import processData from './processData';
+import processForecastData from './processForecastData';
 import displayData from './displayData';
 
 async function getWeatherInfo(location) {
 
     try {
-        const fetchData = await fetch(`https://api.weatherapi.com/v1/current.json?key=8172e47f317945cfa99140930240606&q=${location}`, 
+        const fetchData = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=8172e47f317945cfa99140930240606&q=${location}&days=3`, 
             { mode: 'cors'}
         );
         const data = await fetchData.json();
