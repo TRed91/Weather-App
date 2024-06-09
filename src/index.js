@@ -25,3 +25,10 @@ searchBtn.addEventListener('click', async () => {
     const dataObj = await getData;
     displayData(dataObj);
 });
+
+const initialize = (async function () {
+    const weather = getWeatherInfo('Tulln');
+    const getData = weather.then(data => processData(data));
+    const dataObj = await getData;
+    displayData(dataObj);
+})();
