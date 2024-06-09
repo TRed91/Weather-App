@@ -1,6 +1,6 @@
 import getImage from "./getImage";
 
-export default function displayData(data) {
+export default function displayData(data, toggle) {
     const locationContainer = document.querySelector('.location-container');
     const infoContainer = document.querySelector('.weather-info');
     const forecastContainer = document.querySelector('.forecast-info');
@@ -40,8 +40,14 @@ export default function displayData(data) {
 
     condition.innerHTML = data.condition;
 
-    temp.innerHTML = `Temperature: ${data.tempC}°C`;
-    feelslike.innerHTML = `Feels like: ${data.feelslikeC}`;
+    if (toggle === 'c') {
+        temp.innerHTML = `Temperature: ${data.tempC}°C`;
+        feelslike.innerHTML = `Feels like: ${data.feelslikeC}°C`;
+    } else {
+        temp.innerHTML = `Temperature: ${data.tempF}F`;
+        feelslike.innerHTML = `Feels like: ${data.feelslikeF}F`;
+    }
+    
     
     humidity.innerHTML = `Humdity: ${data.humidity}`;
 
@@ -81,7 +87,12 @@ export default function displayData(data) {
 
     fc1date.innerHTML = data.forecastDay1.date;
     fc1condition.innerHTML = data.forecastDay1.day.condition.text; //icon for icon
-    fc1temp.innerHTML = `${data.forecastDay1.day.avgtemp_c}°C`;
+    if (toggle === 'c') {
+        fc1temp.innerHTML = `${data.forecastDay1.day.avgtemp_c}°C`;
+    } else {
+        fc1temp.innerHTML = `${data.forecastDay1.day.avgtemp_f}F`;
+    }
+    
     fc1rain.innerHTML = `Chance of Rain: ${data.forecastDay1.day.daily_chance_of_rain}%`;
     if (data.forecastDay1.day.daily_will_it_snow === 1){
         fc1snow.innerHTML = `Chance of Snow: ${data.forecastDay1.day.daily_chance_of_snow}%`;
@@ -107,7 +118,12 @@ export default function displayData(data) {
 
     fc2date.innerHTML = data.forecastDay2.date;
     fc2condition.innerHTML = data.forecastDay2.day.condition.text; //icon for icon
-    fc2temp.innerHTML = `${data.forecastDay2.day.avgtemp_c}°C`;
+    if (toggle === 'c') {
+        fc2temp.innerHTML = `${data.forecastDay2.day.avgtemp_c}°C`;
+    } else {
+        fc2temp.innerHTML = `${data.forecastDay2.day.avgtemp_f}F`;
+    }
+    
     fc2rain.innerHTML = `Chance of Rain: ${data.forecastDay2.day.daily_chance_of_rain}%`;
     if (data.forecastDay2.day.daily_will_it_snow === 1){
         fc1snow.innerHTML = `Chance of Snow: ${data.forecastDay2.day.daily_chance_of_snow}%`;
