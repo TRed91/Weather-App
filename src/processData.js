@@ -12,6 +12,7 @@ export default function processData(data) {
     const humidity = data.current.humidity;
 
     const condition = data.current.condition.text;
+    const conditionCode = data.current.condition.code;
 
     const forecastDay1 = data.forecast.forecastday[1];
     const forecastDay2 = data.forecast.forecastday[2];
@@ -26,7 +27,8 @@ export default function processData(data) {
             feelslikeC, 
             feelslikeF, 
             humidity, 
-            condition, 
+            condition,
+            conditionCode, 
             forecastDay1, 
             forecastDay2, 
             forecastDay3

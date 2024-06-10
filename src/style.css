@@ -13,8 +13,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aliceblue;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     gap: 30px;
+    height: 100vh;
+}
+
+.app-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: #ffffffbc;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #0000005e;
 }
 
 .location-info, .temp-info, .condition, .humidity {
@@ -38,6 +52,19 @@ body {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+}
+
+.weather-container {
+    display: flex;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .weather-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 .temp-humid-container {
@@ -80,7 +107,46 @@ body {
 
 .condition-image {
     width: 500px;
-    height: 350px;
+    height: 250px;
     border-radius: 5px;
-    box-shadow: 0px 0px 3px #000000;;
+    box-shadow: 0px 0px 3px #000000;
+}
+
+input {
+    border: 1px solid #00000048;
+    height: 30px;
+    font-size: 1rem;
+    border-radius: 15px;
+    padding-left: 10px;
+    box-shadow: inset 2px 2px 3px #0000003b;
+}
+
+button {
+    border: none;
+    box-shadow: 2px 2px 3px #0000003b;
+    border-radius: 15px;
+    padding: 5px 15px;
+    font-size: 1rem;
+    background-color: #4b4b4b;
+    color: white;
+}
+
+.toggle {
+    background-color: #2e2444;
+    color: white;
+}
+
+button:active {
+    box-shadow: inset 2px 2px 3px #0000003b;
+}
+
+.toggle:active {
+    box-shadow: inset 2px 2px 3px #e3e3e398;
+}
+
+.credit {
+    text-shadow: 0px 0px 3px #ffffffc8;
+    background-color: #ffffff34;
+    box-shadow: 0px 0px 10px #ffffff34;
+    padding: 2px 10px;
 }

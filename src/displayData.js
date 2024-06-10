@@ -24,9 +24,11 @@ export default function displayData(data, toggle) {
     const condition = document.createElement('h2');
     condition.className = 'condition'
 
+    const body = document.querySelector('body');
+    const credit = document.querySelector('.credit')
     const conditionImage = document.createElement('img');
-    conditionImage.className = 'condition-image'
-    getImage(data.condition, conditionImage);
+    conditionImage.className = 'condition-image';
+    getImage(data.condition, data.conditionCode, conditionImage, body, credit);
 
     const temp = document.createElement('h2');
     const feelslike = document.createElement('p');
@@ -55,7 +57,7 @@ export default function displayData(data, toggle) {
     locationInfo.className = 'location-info';
     locationInfo.appendChild(city);
     locationInfo.appendChild(country);
-    locationInfo.appendChild(region);
+    //ocationInfo.appendChild(region);
 
     const tempHumidContainer = document.createElement('div');
     tempHumidContainer.className = 'temp-humid-container';
@@ -71,7 +73,7 @@ export default function displayData(data, toggle) {
     locationContainer.appendChild(locationInfo);
 
     infoContainer.appendChild(condition);
-    infoContainer.appendChild(conditionImage);
+    //infoContainer.appendChild(conditionImage);
     infoContainer.appendChild(tempHumidContainer);
 
     //Display forecast Day 1
@@ -85,7 +87,7 @@ export default function displayData(data, toggle) {
     const fc1humidity = document.createElement('div');
     const fc1Info = [fc1date, fc1condition, fc1temp, fc1rain, fc1snow, fc1humidity];
 
-    fc1date.innerHTML = data.forecastDay1.date;
+    fc1date.innerHTML = 'Tomorrow';
     fc1condition.innerHTML = data.forecastDay1.day.condition.text; //icon for icon
     if (toggle === 'c') {
         fc1temp.innerHTML = `${data.forecastDay1.day.avgtemp_c}°C`;
@@ -116,7 +118,7 @@ export default function displayData(data, toggle) {
     const fc2humidity = document.createElement('div');
     const fc2Info = [fc2date, fc2condition, fc2temp, fc2rain, fc2snow, fc2humidity];
 
-    fc2date.innerHTML = data.forecastDay2.date;
+    fc2date.innerHTML = 'Day after tomorrow';
     fc2condition.innerHTML = data.forecastDay2.day.condition.text; //icon for icon
     if (toggle === 'c') {
         fc2temp.innerHTML = `${data.forecastDay2.day.avgtemp_c}°C`;
