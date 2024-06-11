@@ -10,7 +10,7 @@ import hail from './images/hailstones-123044_1920.jpg';
 export default async function getImage(condition, code ,image, body, credit) {
 
     /* try {
-        const fetchImg = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=wk0WTpjiR7jByDAYRu0ROeqxBrecAdu9&s=${condition}`,
+        const fetchImg = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key==${condition}`,
             { mode: 'cors'}
         );
 
